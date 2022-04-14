@@ -1,0 +1,14 @@
+Kafka
+1. Download Kafka - https://kafka.apache.org/downloads
+2. cd kafka_2.13-3.1.0/config
+3. configure - sudo nano /etc/systemd/system/zookeeper.service
+4. configure - sudo nano /etc/systemd/system/kafka.service
+5. sudo systemctl enable kafka
+6. sudo systemctl start kafka
+refer - https://www.youtube.com/watch?v=jypzSaxOigA&list=PLe1T0uBrDrfOYE8OwQvooPjmnP1zY3wFe&index=3
+
+Direct start kafka
+1. sudo bin/zookeeper-server-start.sh config/zookeeper.properties
+2. sudo bin/kafka-server-start.sh config/server.properties 
+3. producer = bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+4. consumer = bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
